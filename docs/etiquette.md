@@ -3,30 +3,47 @@
 Comme pour la symbologie, il y a trois manières d'utiliser **les expressions dans l'étiquetage**:
 
 * Utiliser une expression pour **construire l'étiquette**
-* Faire **varier des propriétés** (couleur, taille du texte, etc.) selon les valeurs
+* Faire **varier des propriétés** (couleur, taille du texte, etc.)
+  selon les valeurs
 * Utiliser l'**ensemble de règles** pour créer différentes configurations
 
 ## Utilisation d'une expression pour construire l'étiquette
 
-Par défaut, nous avons utilisé un champ de notre attributaire pour construire notre étiquette.
+Par défaut, nous avons utilisé un champ de notre attributaire pour construire
+notre étiquette.
 
-Nous souhaiterions désormais vouloir étiqueter en utilisant deux champs : le nom de la commune ET son code INSEE.
-Il faut désormais utiliser le petit epsilon violet, qui comme vu dans la [présentation de l'interface](./interface.md)
-fait référence à la notion des **expressions**.
+Nous souhaiterions désormais vouloir étiqueter en utilisant deux champs :
+le **nom de la commune** et son **code INSEE**.
+
+Il faut désormais utiliser le petit epsilon violet qui fait référence
+à la notion des **expressions**.
 
 * Pour afficher le nom de la commune avec le code INSEE
     * Attention aux différents opérateurs `+`, `||` et `concat()` qui permettent tous de concaténer des chaînes, mais
     attention aux valeurs NULL et aux valeurs mathématiques. On recommande `concat` bien qu'elle soit un peu plus complexe.
-    * Solution `concat("NOM", '\n', "CODE_INSEE")`
+    * Solution
+      ```sql
+      concat("NOM", '\n', "INSEE_COM")
+      ```
 
-* afficher une information calculée à la volée, comme la superficie de la commune en km² :
+* afficher une information calculée à la volée, comme la **superficie de la commune en km²** :
     * La superficie en anglais se dit `area`.
-    * La projection de la couche est actuellement en m, donc la surface est en m².
-    * Solution partielle `$area / 1000000`
-    * Solution finale `concat("NOM", '\n', round($area / 1000000, 2), ' km²')`
+    * La projection de la couche est actuellement **en m**, donc
+      la surface est **en m²**.
+    * Solution partielle
+      ```sql
+      $area / 1000000
+      ```
+    * Solution finale
+      ```sql
+      concat("NOM", '\n', round($area / 1000000, 2), ' km²')
+      ```
 
 * changer pour afficher la densité de population
-    * Solution `concat("NOM", '\n', round("POPULATION" / ($area / 1000000, 2)), ' hab/km²')`
+    * Solution
+     ```sql
+     concat("NOM", '\n', round("POPULATION" / ($area / 1000000, 2)), ' hab/km²')
+     ```
 
 ## Faire varier des propriétés
 
