@@ -31,6 +31,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_formulaire/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_import/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_modification/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_relation/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_table_attributaire/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.3liz.org/formation-qgis-expressions/visualisation/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>

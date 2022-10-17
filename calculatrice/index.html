@@ -541,16 +541,19 @@
 
 
 <h1 id="la-calculatrice-de-champ">La calculatrice de champ<a class="headerlink" href="#la-calculatrice-de-champ" title="Permanent link">#</a></h1>
-<p>La calculatrice de champ est un outil accessible avec le <code>boulier</code> dans la fenêtre de la table attributaire ou dans la barre d'outil <code>Attributs</code> de QGIS.
+<p>La calculatrice de champ est un outil accessible avec le <code>boulier</code> dans la fenêtre
+de la table attributaire ou dans la barre d'outil <code>Attributs</code> de QGIS.
 Il permet la mise à jour d'un champ existant ou alors de créer un nouveau champ.</p>
 <h2 id="linterface">L'interface<a class="headerlink" href="#linterface" title="Permanent link">#</a></h2>
 <p>La boîte de dialogue est très proche de celle de l'<strong>éditeur d'expressions</strong>,
-avec en haut un nouveau bloc pour configurer quels sont les champs <strong>à créer</strong> ou <strong>à modifier</strong></p>
+avec en haut un nouveau bloc pour configurer quels sont les champs
+<strong>à créer</strong> ou <strong>à modifier</strong></p>
 <p><img alt="calculatrice" src="../media/calculatrice.png" /></p>
 <p>A partir de cette interface, on peut soit:</p>
 <ul>
 <li>créer un <strong>nouveau champ</strong> qui sera rempli avec le résulat de l'expression</li>
-<li>créer un <strong>champ virtuel</strong> qui sera rempli dynamiquement avec le résultat de l'expression</li>
+<li>créer un <strong>champ virtuel</strong> qui sera rempli dynamiquement
+  avec le résultat de l'expression</li>
 </ul>
 <h2 id="les-champs-virtuels">Les champs virtuels<a class="headerlink" href="#les-champs-virtuels" title="Permanent link">#</a></h2>
 <p>Ces champs ne sont pas enregistrés dans la source de la couche, mais seulement
@@ -618,7 +621,8 @@ Alors, il faut bien contrôler que</p>
 <li>de sélectionner <code>&lt;geometry&gt;</code> dans la liste déroulante des champs</li>
 <li>utiliser une expression compatible avec les géométries</li>
 </ul>
-<p>Par exemple, on peut créer une géométrie de type point à partir de <code>longitude</code> et <code>latitude</code></p>
+<p>Par exemple, on peut créer une géométrie de type point
+à partir de <code>longitude</code> et <code>latitude</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">make_point</span><span class="p">(</span><span class="ss">&quot;longitude&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;latitude&quot;</span><span class="p">)</span><span class="o">`</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>On peut aussi déplacer des points aléatoirement:</p>
