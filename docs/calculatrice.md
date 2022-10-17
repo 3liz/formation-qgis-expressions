@@ -86,6 +86,7 @@ Alors, il faut bien contrôler que
 * le champ choisi est bien le bon dans la **liste déroulante**.
 
 ![calculatrice modifier valeurs](./media/calculatrice_modifier_valeurs.png)
+
 ## Modifier les géométries
 
 On peut tout à fait **modifier les géométries** d'une couche spatiale avec des expressions.
@@ -123,3 +124,11 @@ avec les expressions :
 * tampons sur les géométries
 * récupération du nombre de noeuds, de parties
 * etc.
+
+
+## Mise en pratique
+
+Nous allons consulter et étudier les exemples présentés dans [la présentation sur les expressions](https://docs.3liz.org/presentations/2022-01_QGISFR_2022_outil_saisie_avec_expressions_Michael_DOUCHIN.html)
+animée lors des journées **QGIS FR 2002**
+
+Pour cela, ouvrir dans QGIS le fichier [observations_source.ods](media/observations_source.ods), puis suivre la présentation.
