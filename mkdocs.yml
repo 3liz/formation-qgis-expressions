@@ -16,7 +16,8 @@ nav:
     - Visualisation: visualisation.md
     - Sélection: selection.md
     - Calculatrice: calculatrice.md
-    - TP Outil de saisie: tp_outil_saisie.md
+    - TP Outil de saisie:
+        - Introduction: tp_outil_saisie.md
         - Import: tp_import.md
         - Création et correction: tm_modification.md
         - Mise en relation: tp_relation.md
