@@ -704,36 +704,48 @@
 <p>Comme pour la symbologie, il y a trois manières d'utiliser <strong>les expressions dans l'étiquetage</strong>:</p>
 <ul>
 <li>Utiliser une expression pour <strong>construire l'étiquette</strong></li>
-<li>Faire <strong>varier des propriétés</strong> (couleur, taille du texte, etc.) selon les valeurs</li>
+<li>Faire <strong>varier des propriétés</strong> (couleur, taille du texte, etc.)
+  selon les valeurs</li>
 <li>Utiliser l'<strong>ensemble de règles</strong> pour créer différentes configurations</li>
 </ul>
 <h2 id="utilisation-dune-expression-pour-construire-letiquette">Utilisation d'une expression pour construire l'étiquette<a class="headerlink" href="#utilisation-dune-expression-pour-construire-letiquette" title="Permanent link">#</a></h2>
-<p>Par défaut, nous avons utilisé un champ de notre attributaire pour construire notre étiquette.</p>
-<p>Nous souhaiterions désormais vouloir étiqueter en utilisant deux champs : le nom de la commune ET son code INSEE.
-Il faut désormais utiliser le petit epsilon violet, qui comme vu dans la <a href="./interface.md">présentation de l'interface</a>
-fait référence à la notion des <strong>expressions</strong>.</p>
+<p>Par défaut, nous avons utilisé un champ de notre attributaire pour construire
+notre étiquette.</p>
+<p>Nous souhaiterions désormais vouloir étiqueter en utilisant deux champs :
+le <strong>nom de la commune</strong> et son <strong>code INSEE</strong>.</p>
+<p>Il faut désormais utiliser le petit epsilon violet qui fait référence
+à la notion des <strong>expressions</strong>.</p>
 <ul>
 <li>
 <p>Pour afficher le nom de la commune avec le code INSEE</p>
 <ul>
 <li>Attention aux différents opérateurs <code>+</code>, <code>||</code> et <code>concat()</code> qui permettent tous de concaténer des chaînes, mais
 attention aux valeurs NULL et aux valeurs mathématiques. On recommande <code>concat</code> bien qu'elle soit un peu plus complexe.</li>
-<li>Solution <code>concat("NOM", '\n', "CODE_INSEE")</code></li>
+<li>Solution
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">concat</span><span class="p">(</span><span class="ss">&quot;NOM&quot;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;INSEE_COM&quot;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
 </ul>
 </li>
 <li>
-<p>afficher une information calculée à la volée, comme la superficie de la commune en km² :</p>
+<p>afficher une information calculée à la volée, comme la <strong>superficie de la commune en km²</strong> :</p>
 <ul>
 <li>La superficie en anglais se dit <code>area</code>.</li>
-<li>La projection de la couche est actuellement en m, donc la surface est en m².</li>
-<li>Solution partielle <code>$area / 1000000</code></li>
-<li>Solution finale <code>concat("NOM", '\n', round($area / 1000000, 2), ' km²')</code></li>
+<li>La projection de la couche est actuellement <strong>en m</strong>, donc
+  la surface est <strong>en m²</strong>.</li>
+<li>Solution partielle
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">$</span><span class="n">area</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000000</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
+<li>Solution finale
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">concat</span><span class="p">(</span><span class="ss">&quot;NOM&quot;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="err">$</span><span class="n">area</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39; km²&#39;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
 </ul>
 </li>
 <li>
 <p>changer pour afficher la densité de population</p>
 <ul>
-<li>Solution <code>concat("NOM", '\n', round("POPULATION" / ($area / 1000000, 2)), ' hab/km²')</code></li>
+<li>Solution
+ <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">concat</span><span class="p">(</span><span class="ss">&quot;NOM&quot;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="ss">&quot;POPULATION&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="err">$</span><span class="n">area</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)),</span><span class="w"> </span><span class="s1">&#39; hab/km²&#39;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
 </ul>
 </li>
 </ul>
