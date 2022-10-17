@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "hydrant_fort_de_france",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::5490" } },
+"bbox": [ 706039.165074316, 1614946.10646848, 709171.380527498, 1616903.34298895 ],                                                
+"features": [
+{ "type": "Feature", "properties": { "id": "node\/6177094809", "@id": "node\/6177094809", "emergency": "fire_hydrant", "fire_hydrant:position": "sidewalk", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 706800.89, 1615902.08, 706800.89, 1615902.08 ], "geometry": { "type": "Point", "coordinates": [ 706800.89, 1615902.08 ] } },
+{ "type": "Feature", "properties": { "id": "node\/6177094812", "@id": "node\/6177094812", "emergency": "fire_hydrant", "fire_hydrant:position": "sidewalk", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 706716.12, 1615757.9, 706716.12, 1615757.9 ], "geometry": { "type": "Point", "coordinates": [ 706716.12, 1615757.9 ] } },
+{ "type": "Feature", "properties": { "id": "node\/6177094821", "@id": "node\/6177094821", "emergency": "fire_hydrant", "fire_hydrant:position": "green", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 706751.99, 1615694.5, 706751.99, 1615694.5 ], "geometry": { "type": "Point", "coordinates": [ 706751.99, 1615694.5 ] } },
+{ "type": "Feature", "properties": { "id": "node\/6177094822", "@id": "node\/6177094822", "emergency": "fire_hydrant", "fire_hydrant:position": "sidewalk", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 706712.21, 1615604.33, 706712.21, 1615604.33 ], "geometry": { "type": "Point", "coordinates": [ 706712.21, 1615604.33 ] } },
+{ "type": "Feature", "properties": { "id": "node\/6191173775", "@id": "node\/6191173775", "emergency": "fire_hydrant", "fire_hydrant:position": "sidewalk", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 708458.61, 1615375.08, 708458.61, 1615375.08 ], "geometry": { "type": "Point", "coordinates": [ 708458.61, 1615375.08 ] } },
+{ "type": "Feature", "properties": { "id": "node\/6243199988", "@id": "node\/6243199988", "emergency": "fire_hydrant", "fire_hydrant:position": "sidewalk", "fire_hydrant:type": "pillar", "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2019" }, "bbox": [ 708195.84, 1615147.08, 708195.84, 1615147.08 ], "geometry": { "type": "Point", "coordinates": [ 708195.84, 1615147.08 ] } },
+{ "type": "Feature", "properties": { "id": "node\/7164163411", "@id": "node\/7164163411", "emergency": "fire_hydrant", "fire_hydrant:position": "lane", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 706039.17, 1614971.05, 706039.17, 1614971.05 ], "geometry": { "type": "Point", "coordinates": [ 706039.17, 1614971.05 ] } },
+{ "type": "Feature", "properties": { "id": "node\/7164163428", "@id": "node\/7164163428", "emergency": "fire_hydrant", "fire_hydrant:position": "lane", "fire_hydrant:type": "pillar", "source": null }, "bbox": [ 706384.21, 1614946.11, 706384.21, 1614946.11 ], "geometry": { "type": "Point", "coordinates": [ 706384.21, 1614946.11 ] } },
+{ "type": "Feature", "properties": { "id": "node\/8473842823", "@id": "node\/8473842823", "emergency": "fire_hydrant", "fire_hydrant:position": null, "fire_hydrant:type": "pillar", "source": "local knowledge" }, "bbox": [ 709171.38, 1616903.34, 709171.38, 1616903.34 ], "geometry": { "type": "Point", "coordinates": [ 709171.38, 1616903.34 ] } }
+]
+}

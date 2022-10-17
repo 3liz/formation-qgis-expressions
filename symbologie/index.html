@@ -715,7 +715,7 @@
 
 
 <h1 id="la-symbologie-vecteur">La symbologie vecteur<a class="headerlink" href="#la-symbologie-vecteur" title="Permanent link">#</a></h1>
-<p>Les expressions peuvent être utilisées dans QGIS pour rendre plus dynamique
+<p>Les expressions peuvent être utilisées dans QGIS pour <strong>rendre plus dynamique</strong>
 la symbologie des couches vecteurs:</p>
 <ul>
 <li>calcul via une expression pour <strong>classer les entités</strong> au lieu d'utiliser un champ.</li>
@@ -737,15 +737,15 @@ il est tout à fait possible d'<strong>utiliser une expression</strong>.</p>
   d'avoir un champ (virtuel ou non): <code>"POPULATION" / ($area / 1000000)</code></li>
 <li>Faire une classification sur l'ensemble des valeurs possibles prises par 2 champs :
   <code>concat("CATEGORIE", ' - ', "IMPORTANCE")</code></li>
-<li>Faire une symbologie graduée en fonction de la compacité des géométries</li>
 </ul>
+<p><img alt="Symbole gradué par densité" src="../media/symbologie_graduee_expression.png" /></p>
 <h2 id="la-symbologie-par-ensemble-de-regles">La symbologie par ensemble de règles<a class="headerlink" href="#la-symbologie-par-ensemble-de-regles" title="Permanent link">#</a></h2>
 <p>Ce type de symbologie est très utile si vous souhaitez contrôler quels symboles
 sont rendus en fonction des entités, ou d'autres caractéristiques (échelles)</p>
 <p>Par exemple, on peut choisir de rendre les polygones des communes comme</p>
 <ul>
-<li>des points à petite échelle</li>
-<li>des polygones à grande échelle</li>
+<li>des <strong>points</strong> à petite échelle : <code>$scale &gt;= 500000</code></li>
+<li>des <strong>polygones</strong> à grande échelle : <code>$scale &lt; 500000</code></li>
 </ul>
 <p>Pour cela, il faut ouvrir les <strong>propriétés de la couche</strong>, dans l'onglet <code>Symbologie</code>
 et choisir le mode `Ensemble de règles</p>
@@ -753,8 +753,28 @@ et choisir le mode `Ensemble de règles</p>
 <h2 id="controle-les-symboles-a-laide-dune-expression">Contrôle les symboles à l'aide d'une expression<a class="headerlink" href="#controle-les-symboles-a-laide-dune-expression" title="Permanent link">#</a></h2>
 <p>Quasiment toutes les propriétés de la symbologie (et des étiquettes)
 peuvent être <strong>contrôlées à l'aide d'expressions</strong>.</p>
-<p>Il est ainsi possible de choisir la <strong>taille</strong> d'un symbole, la <strong>couleur</strong> d'une bordure,
-l'<strong>échelle</strong> d'affichage, le fait que la donnée soit affichée ou non.</p>
+<p>Pour cela, on doit activer le Epsilon <img alt="" src="../media/mIconExpression.png" />
+à la place du symbole suivant <img alt="" src="../media/mIconDataDefine.png" /></p>
+<p>Il est ainsi possible de choisir</p>
+<ul>
+<li>la <strong>taille</strong> d'un symbole,</li>
+<li>la <strong>couleur</strong> d'une bordure,</li>
+<li>l'<strong>échelle</strong> d'affichage,</li>
+<li>le fait que la donnée soit affichée ou non,</li>
+<li>modifier la symbologie ou les étiquettes des objets sélectionnés :
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">CASE</span><span class="w"></span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">is_selected</span><span class="p">()</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="w"></span>
+<span class="k">END</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
+<li>la rotation des symboles à partir d'un champ
+  (Ex: angle de prise de vue d'une photographie)</li>
+</ul>
+<p>Un exemple amusant :</p>
+<p><img alt="Rotation par expression" src="../media/rotation_par_expression.gif" /></p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Attention à ne pas utiliser les expressions alors que des moyens
@@ -763,14 +783,28 @@ Par exemple pour faire varier une couleur sur 5 classes: utiliser
 la symbologie catégorisée.</p>
 </div>
 <h2 id="creer-des-geometries-dynamiques">Créer des géométries dynamiques<a class="headerlink" href="#creer-des-geometries-dynamiques" title="Permanent link">#</a></h2>
+<p>Voir l'exemple sur la <a href="../calculatrice/">Calculatrice</a> pour la création
+de géométries à partir de champs de la couches</p>
+<p>Sinon, on peut aussi créer <strong>dynamiquement des géométries</strong>, avec le <strong>générateur de géométries</strong> par exemple :</p>
 <ul>
-<li>Voir l'exemple sur la <a href="../calculatrice/">Calculatrice</a> pour la création
-  de géométries à partir de champs de la couches</li>
-<li>Sinon, on peut aussi créer dynamiquement des géométries, par exemple
-  un tampon de 1km autour de points:</li>
+<li>Ouvrir le fichier <a href="../media/hydrant_fort_de_france.geojson">des Hydrants de Fort-de-France (@ contributeurs OSM)</a></li>
+<li>Ouvrir la symbologie</li>
+<li>Ajouter un niveau de symbole</li>
+<li>Utiliser le mode "Générateur de géométrie"</li>
+<li>Créer un <strong>tampon de 500 mètres</strong> autour de points via :
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">buffer</span><span class="p">(</span><span class="err">$</span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">buffer</span><span class="p">(</span><span class="err">$</span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>Configuration :</p>
+<p><img alt="Générateur de géométrie (configuration)" src="../media/generateur_geometrie_expression.png" /></p>
+<p>Le résultat :</p>
+<p><img alt="Générateur de géométrie (résultat)" src="../media/generateur_geometrie_resultat.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Dans l'expression, on pourrait très bien faire varier la distance tampon
+en fonction de la valeur d'un champ ou d'un calcul</p>
+</div>
+<p>On peut aussi créer des lignes entre objets, avec la fonction <code>make_line</code>.</p>
 
 
 
