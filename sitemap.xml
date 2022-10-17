@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/calculatrice/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/presentation/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/selection/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/source-de-donnees/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/visualisation/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
