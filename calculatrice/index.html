@@ -383,9 +383,68 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Calculatrice
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Calculatrice
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linterface" class="md-nav__link">
+    L'interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-champs-virtuels" class="md-nav__link">
+    Les champs virtuels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-des-champs" class="md-nav__link">
+    Créer des champs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifier-des-valeurs-attributaires" class="md-nav__link">
+    Modifier des valeurs attributaires
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifier-les-geometries" class="md-nav__link">
+    Modifier les géométries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -411,6 +470,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linterface" class="md-nav__link">
+    L'interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-champs-virtuels" class="md-nav__link">
+    Les champs virtuels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-des-champs" class="md-nav__link">
+    Créer des champs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifier-des-valeurs-attributaires" class="md-nav__link">
+    Modifier des valeurs attributaires
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifier-les-geometries" class="md-nav__link">
+    Modifier les géométries
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -425,9 +527,102 @@
 
 
 <h1 id="la-calculatrice-de-champ">La calculatrice de champ<a class="headerlink" href="#la-calculatrice-de-champ" title="Permanent link">#</a></h1>
-<p>La calculatrice de champ est un outil accessible avec le <code>boulier</code> dans la fenêtre de la table attributaire.
+<p>La calculatrice de champ est un outil accessible avec le <code>boulier</code> dans la fenêtre de la table attributaire ou dans la barre d'outil <code>Attributs</code> de QGIS.
 Il permet la mise à jour d'un champ existant ou alors de créer un nouveau champ.</p>
+<h2 id="linterface">L'interface<a class="headerlink" href="#linterface" title="Permanent link">#</a></h2>
+<p>La boîte de dialogue est très proche de celle de l'<strong>éditeur d'expressions</strong>,
+avec en haut un nouveau bloc pour configurer quels sont les champs <strong>à créer</strong> ou <strong>à modifier</strong></p>
+<p><img alt="calculatrice" src="../media/calculatrice.png" /></p>
+<p>A partir de cette interface, on peut soit:</p>
+<ul>
+<li>créer un <strong>nouveau champ</strong> qui sera rempli avec le résulat de l'expression</li>
+<li>créer un <strong>champ virtuel</strong> qui sera rempli dynamiquement avec le résultat de l'expression</li>
+</ul>
+<h2 id="les-champs-virtuels">Les champs virtuels<a class="headerlink" href="#les-champs-virtuels" title="Permanent link">#</a></h2>
+<p>Ces champs ne sont pas enregistrés dans la source de la couche, mais seulement
+dans les propriétés de la couche du projet QGIS.</p>
+<p>Pour créer un champ virtuel, il faut bien <strong>cocher la case</strong> <code>Créer un champ virtuel</code>.</p>
+<p>Par exemple, on peut créer :</p>
+<ul>
+<li>un champ virtuel <code>v_densite</code> qui va permettre de calculer la
+  densité de population par kilomètre carré. <code>"POPULATION" / ($area / 1000000)</code></li>
+<li>un champ virtuel <code>v_surface</code> qui va récupérer la surface en hectare à partir
+  de la géométrie : <code>to_int( $area / 10000 )</code></li>
+</ul>
+<p>Lorsqu'on ouvre la table attributaire, ces deux champs sont affichés à droite :</p>
+<p><img alt="champs virtuels table" src="../media/champs_virtuels_table_attributaire.png" /></p>
+<p>On peut aussi voir ces champs dans l'onglet <code>Champs</code> des <strong>propriétés de la couche</strong> QGIS.</p>
+<p><img alt="champs virtuels champs" src="../media/champs_virtuels_onglet_champs.png" /></p>
+<p>On peut modifier l'expression utilisée en cliquant sur le bouton Epsilon visible
+dans le commentaire de chaque champ virtue.</p>
+<h2 id="creer-des-champs">Créer des champs<a class="headerlink" href="#creer-des-champs" title="Permanent link">#</a></h2>
+<p>Pour créer des champs, on peut faire exactement la même chose,
+sauf qu'il faut décocher la case <code>Créer un champ virtuel</code> dans la calculatrice.</p>
+<p>La différence, c'est qu'alors QGIS va ajouter <strong>un nouveau champ</strong> à votre couche.
+Il sera donc exploitable dans tous les projets QGIS utilisant cette source de données</p>
+<p>-&gt; Tester en :</p>
+<ul>
+<li>créant un nouveau champ <code>densite</code> avec la même formule,</li>
+<li>modifiant une géométrie, ou créer une nouvelle commune</li>
+<li>voir comment évoluent les valeurs pour les champs <code>v_densite</code> et <code>densite</code></li>
+</ul>
+<p>Par contre, <strong>il ne sera pas dynamique</strong>. Si on modifie la géométrie, la surface et la densité
+devront être recalculées.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p><strong>Pour toutes modifications d'une couche vecteur</strong>, on doit se placer dans une session d'édition, à l'aide du petit stylo dans la barre d'outils <code>Numérisation</code> ou dans la fenêtre de la table attributaire.</p>
+</div>
+<h2 id="modifier-des-valeurs-attributaires">Modifier des valeurs attributaires<a class="headerlink" href="#modifier-des-valeurs-attributaires" title="Permanent link">#</a></h2>
+<p>On peut utiliser les expressions pour modifier les valeurs d'un champ
+pour <strong>tous les objets</strong> de la couche ou seulement pour les <strong>objets sélectionnés</strong>.</p>
+<p>Pour cela, il suffit</p>
+<ul>
+<li>d'ouvrir la <strong>table attributaire</strong></li>
+<li>de passer la couche en <strong>mode édition</strong> avec le bouton <code>Crayon</code></li>
+<li>d'utiliser le champ de <strong>saisie d'expression</strong> en haut de la table</li>
+<li>d'appliquer sur tous les objets ou sur les objets sélectionnés</li>
+</ul>
+<p><img alt="" src="../media/table_attributaire_modifier_valeurs.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Pas de souci si on s'est trompé et qu'on a modifié par erreur des données.
+Les modifications sont enregistrées dans l'historique et peuvent être
+annulées tant qu'on n'a pas cliqué sur le bouton d'enregistrement.</p>
+</div>
+<p>On peut aussi utiliser la <strong>calculatrice de champs</strong> pour lancer cette modification.
+Alors, il faut bien contrôler que</p>
+<ul>
+<li>la case <code>Ne mettre à jour que les N entités sélectionnées</code> est cochée (si on le souhaite)</li>
+<li>le champ choisi est bien le bon dans la <strong>liste déroulante</strong>.</li>
+</ul>
+<p><img alt="calculatrice modifier valeurs" src="../media/calculatrice_modifier_valeurs.png" /></p>
+<h2 id="modifier-les-geometries">Modifier les géométries<a class="headerlink" href="#modifier-les-geometries" title="Permanent link">#</a></h2>
+<p>On peut tout à fait <strong>modifier les géométries</strong> d'une couche spatiale avec des expressions.</p>
+<p>Pour cela, il suffit</p>
+<ul>
+<li>d'ouvrir la <strong>calculatrice de champs</strong>,</li>
+<li>de sélectionner <code>&lt;geometry&gt;</code> dans la liste déroulante des champs</li>
+<li>utiliser une expression compatible avec les géométries</li>
+</ul>
+<p>Par exemple, on peut déplacer des points aléatoirement:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">with_variable</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s1">&#39;distance_floutage&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="mi">1000</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">translate</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="err">$</span><span class="n">geometry</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">),</span><span class="w"></span>
+<span class="w">        </span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 
 
