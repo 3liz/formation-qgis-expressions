@@ -96,7 +96,13 @@ Pour cela, il suffit
 * de sélectionner `<geometry>` dans la liste déroulante des champs
 * utiliser une expression compatible avec les géométries
 
-Par exemple, on peut déplacer des points aléatoirement:
+Par exemple, on peut créer une géométrie de type point à partir de `longitude` et `latitude`
+
+```sql
+make_point("longitude", "latitude")`
+```
+
+On peut aussi déplacer des points aléatoirement:
 
 ```sql
 with_variable(
@@ -109,3 +115,11 @@ with_variable(
 	)
 )
 ```
+
+De nombreuses possibilités sont offertes par QGIS pour **manipuler les géométries**
+avec les expressions :
+
+* création de géométries (lignes, polygones, etc.)
+* tampons sur les géométries
+* récupération du nombre de noeuds, de parties
+* etc.
