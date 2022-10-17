@@ -18,7 +18,7 @@ Utilisons l'icône ![](./media/mIconExpressionSelect.png) avec un carré jaune e
 * Cette icône se trouve dans la **barre d'outils** ci-dessus de la fenêtre principale
 * ou dans la nouvelle fenêtre de la **table attributaire**.
 
-On souhaite pouvoir sélectionner le(s) entité(s) qui répondent au critère `"CODE_INSEE" = '97229'`, pour cela utiliser
+On souhaite pouvoir sélectionner le(s) entité(s) qui répondent au critère `"INSEE_COM" = '97229'`, pour cela utiliser
 l'interface graphique afin de construire la requête. Que remarquons-nous sur la structure de l'expression ?
 
 * Les **noms des champs** sont entre `""`
@@ -27,7 +27,7 @@ l'interface graphique afin de construire la requête. Que remarquons-nous sur la
 On souhaite désormais sélectionner toutes les communes dont :
 
 * le **code INSEE** commence par `9722` à l'aide de l'opérateur `LIKE` :
-    * Le pourcentage permet de faire un caractère "joker" remplaçant n'importe quelle chaîne de caractères : `"CODE_INSEE" like '9722%'`
+    * Le pourcentage permet de faire un caractère "joker" remplaçant n'importe quelle chaîne de caractères : `"INSEE_COM" like '9722%'`
 * la population est **inférieure à 1000 habitants** : `"POPULATION" < 1000`
 * les communes du `Fort-de-France` et  `Macouba` : `"NOM" IN ('Fort-de-France', 'Macouba')`
 * la densité au km carré est inférieure à 200 : `"POPULATION" / ($area / 1000000) < 200`

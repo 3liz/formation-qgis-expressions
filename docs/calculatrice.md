@@ -1,19 +1,22 @@
 # La calculatrice de champ
 
-La calculatrice de champ est un outil accessible avec le `boulier` dans la fenêtre de la table attributaire ou dans la barre d'outil `Attributs` de QGIS.
+La calculatrice de champ est un outil accessible avec le `boulier` dans la fenêtre
+de la table attributaire ou dans la barre d'outil `Attributs` de QGIS.
 Il permet la mise à jour d'un champ existant ou alors de créer un nouveau champ.
 
 ## L'interface
 
 La boîte de dialogue est très proche de celle de l'**éditeur d'expressions**,
-avec en haut un nouveau bloc pour configurer quels sont les champs **à créer** ou **à modifier**
+avec en haut un nouveau bloc pour configurer quels sont les champs
+**à créer** ou **à modifier**
 
 ![calculatrice](./media/calculatrice.png)
 
 A partir de cette interface, on peut soit:
 
 * créer un **nouveau champ** qui sera rempli avec le résulat de l'expression
-* créer un **champ virtuel** qui sera rempli dynamiquement avec le résultat de l'expression
+* créer un **champ virtuel** qui sera rempli dynamiquement
+  avec le résultat de l'expression
 
 ## Les champs virtuels
 
@@ -97,7 +100,8 @@ Pour cela, il suffit
 * de sélectionner `<geometry>` dans la liste déroulante des champs
 * utiliser une expression compatible avec les géométries
 
-Par exemple, on peut créer une géométrie de type point à partir de `longitude` et `latitude`
+Par exemple, on peut créer une géométrie de type point
+à partir de `longitude` et `latitude`:
 
 ```sql
 make_point("longitude", "latitude")`

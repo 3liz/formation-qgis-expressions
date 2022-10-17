@@ -3,7 +3,7 @@
 Les expressions peuvent être utilisées dans QGIS pour rendre plus dynamique
 la symbologie des couches vecteurs:
 
-* calcul via une expression pour **classer les entités** au lieu d'utiliser un champ
+* calcul via une expression pour **classer les entités** au lieu d'utiliser un champ.
 * filtrer quelles entités doivent être rendues par tel symbologie via des filtres
 * contrôler toutes les **propriétés** via une expressions (échelle, couleur, taille, etc.)
 * **créer des géométries** pour l'affichage (tampons, lignes entre objets)
