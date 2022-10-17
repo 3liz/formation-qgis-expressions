@@ -604,7 +604,10 @@ Alors, il faut bien contrôler que</p>
 <li>de sélectionner <code>&lt;geometry&gt;</code> dans la liste déroulante des champs</li>
 <li>utiliser une expression compatible avec les géométries</li>
 </ul>
-<p>Par exemple, on peut déplacer des points aléatoirement:</p>
+<p>Par exemple, on peut créer une géométrie de type point à partir de <code>longitude</code> et <code>latitude</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">make_point</span><span class="p">(</span><span class="ss">&quot;longitude&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;latitude&quot;</span><span class="p">)</span><span class="o">`</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>On peut aussi déplacer des points aléatoirement:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -623,6 +626,14 @@ Alors, il faut bien contrôler que</p>
 <span class="w">    </span><span class="p">)</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>De nombreuses possibilités sont offertes par QGIS pour <strong>manipuler les géométries</strong>
+avec les expressions :</p>
+<ul>
+<li>création de géométries (lignes, polygones, etc.)</li>
+<li>tampons sur les géométries</li>
+<li>récupération du nombre de noeuds, de parties</li>
+<li>etc.</li>
+</ul>
 
 
 
