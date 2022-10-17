@@ -106,3 +106,39 @@ Le résultat :
     en fonction de la valeur d'un champ ou d'un calcul
 
 On peut aussi créer des lignes entre objets, avec la fonction `make_line`.
+
+## Quelques exemples d'expression
+
+Certains utilisateurs sont assez créatifs et inventent
+de nouvelles utilisations des expressions :
+
+* **Couleur continue** pour un vecteur basé sur une palette de couleur https://twitter.com/Qgis_Bzh/status/1207974981918973962
+* **Rotation ou taille** qui dépend de la **position du curseur** https://twitter.com/kgjenkins/status/1298363142070767617
+* **Lisser** les courbes de niveau SRTM https://twitter.com/timlinux/status/1331645809834811394
+* Modifier la symbologie ou les étiquettes des **objets sélectionnés** `is_selected() = True`
+* Couleur d'étiquette basée sur la **visibilité d'une couche** `is_layer_visible()`: https://twitter.com/northroadgeo/status/1208299125604638720
+* Trouver le **point le plus proche** : https://twitter.com/spatialthoughts/status/1421038975955791873 et https://www.youtube.com/watch?v=iCgDIxUGAp0&t=113s
+* Lire les données **EXIF d'une image JPG** https://github.com/qgis/QGIS/commit/754328cbd0a4e5251f03c444221988a7031f4cef
+* Récupérer un tableau des éléments d'une **multi-géométrie**: https://twitter.com/cartocalypse/status/1386647274416181253
+* Utiliser `eval` pour créer des **expressions dans des expressions**. Ex: somme des 31 colonnes de données pour récupérer la somme par mois:
+  ```sql
+  eval(
+    array_to_string(
+      array_foreach(
+        generate_series(1, 31),
+        concat("VALUE", @element, '"')), ' + '
+      )
+  )
+  ```
+* Déplacer des points de manière aléatoire (floutage)
+  ```sql
+  with_variable(
+    'distance_floutage',
+    1000,
+    translate(
+      $geometry,
+      randf(-1 * @distance_floutage, @distance_floutage),
+      randf(-1 * @distance_floutage, @distance_floutage)
+    )
+  )
+  ```
