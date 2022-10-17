@@ -535,14 +535,19 @@ si vous voulez pleinement exploiter les possibilités de QGIS.</p>
 qui est accessible dans les outils de QGIS via les boutons montrant
 le symbole <strong>Epsilon</strong> <img alt="epsilon" src="../media/mIconExpression.png" />.</p>
 <h2 id="lediteur-dexpressions">L'éditeur d'expressions<a class="headerlink" href="#lediteur-dexpressions" title="Permanent link">#</a></h2>
+<p>Pour ouvrir l'éditeur, vous pouvez par exemple</p>
+<ul>
+<li>sélectionner une couche dans la légende</li>
+<li>cliquer sur l'icône <img alt="" src="../media/mIconExpressionSelect.png" /> dans la barre d'outil de sélection</li>
+</ul>
+<p><img alt="" src="../media/function_list.png" /></p>
 <p>La fenêtre de l’<strong>éditeur d’expression</strong> vous donne accès à:</p>
 <ul>
-<li>l’onglet <code>Expression</code> qui, grâce à un large panel de fonctions prédéfinies,
+<li>l’onglet <code>Expression</code> qui, grâce à un large choix de fonctions prédéfinies,
   vous permet d’écrire et de vérifier l’expression à utiliser;</li>
 <li>l’onglet <code>Editeur de fonction</code> qui permet d’étendre cette liste
   par la création de vos propres fonctions.</li>
 </ul>
-<p><img alt="" src="../media/function_list.png" /></p>
 <p>L’onglet <code>Expression</code> fournit l’<strong>interface principale</strong> pour écrire
 des expressions en utilisant des fonctions,
 des champs de couche et des valeurs. Il contient les widgets suivants :</p>
@@ -561,12 +566,12 @@ L’<strong>auto-complétion</strong> est disponible pour accélérer l’écrit
 <li>Un <strong>marqueur</strong> : pour toutes les autres erreurs (par exemple une parenthèse
     manquante, un caractère inattendu) à la position problématique.</li>
 </ul>
-<p>Au-dessus de l’éditeur d’expressions, un <strong>ensemble d’outils</strong> vous aide :</p>
+<p><strong>Au-dessus</strong> de l’éditeur d’expressions, un <strong>ensemble d’outils</strong> vous aide :</p>
 <ul>
 <li><strong>vider</strong> l’éditeur d’expression</li>
 <li><strong>créer et gérer</strong> vos expressions sauvegardées</li>
 </ul>
-<p>Sous l’éditeur d'expression, vous trouvez :</p>
+<p><strong>Sous l’éditeur</strong> d'expression, vous trouvez :</p>
 <ul>
 <li>un ensemble d’<strong>opérateurs de base</strong> pour vous aider à construire l’expression</li>
 <li>une indication du f<strong>ormat de sortie attendu</strong> lorsque vous définissez
@@ -609,13 +614,13 @@ ou <strong>calculer des valeurs</strong>. Le langage emprunte quelques conventio
 au langage <code>SQL</code> (pour faire des requêtes dans les bases de données)</p>
 <p>L’écriture d’une expression dans QGIS suit certaines règles :</p>
 <ul>
-<li>le <strong>nom d'un champ</strong> est entre guillemet double : <code>"code_insee"</code>.</li>
+<li>le <strong>nom d'un champ</strong> est entre guillemet double : <code>"INSEE_COM"</code>.</li>
 <li>une <strong>chaîne de caractère</strong> entre guillemet simple : <code>'une valeur'</code>.</li>
 <li>on peut effectuer des <strong>calculs arithmétiques</strong> sur des
   nombres (entiers ou réels) : <code>(1 + 2 - (3 * 4)) / 5</code></li>
 <li>on peut <strong>concaténer</strong> des chaînes de caractères : <code>'Les expressions' || ' dans QGIS'</code></li>
 <li>on peut appeler des <strong>fonctions</strong> qui transforment des valeurs en <strong>paramètres</strong>
-  et renvoient une <strong>valeur</strong></li>
+  et renvoient une <strong>valeur</strong> : <code>to_date('01/01/2022', 'dd/MM/yyyy')</code></li>
 <li>selon le <strong>contexte</strong>, on souhaite que l'expression renvoie :</li>
 <li>une <code>valeur</code> textuelle, entière, une chaîne de caractère, par exemple pour calculer une densité</li>
 <li>un booléen: <code>Vrai</code> ou <code>Faux</code>, par exemple pour filtrer</li>
