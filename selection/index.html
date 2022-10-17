@@ -488,49 +488,38 @@
 <h2 id="utilisation-de-loutil">Utilisation de l'outil<a class="headerlink" href="#utilisation-de-loutil" title="Permanent link">#</a></h2>
 <p>On peut utiliser les expressions pour <strong>rechercher des données</strong> dans une couche vecteur.
 Il existe par exemple l'outil de <strong>sélection par expression</strong> qui permet de
-surligner en jaune tous les objets qui correspondent à un <strong>filtre</strong>.</p>
-<p>La couche <code>commune</code> comporte de nombreuses entités. On peut le voir graphiquement sur le canevas de la carte,
+surligner en jaune (sur la carte) tous les objets qui correspondent à un <strong>filtre</strong>.</p>
+<p>La couche <code>COMMUNE</code> comporte de nombreuses entités. On peut le voir graphiquement sur le canevas de la carte,
 mais aussi en ouvrant sa <strong>table attributaire</strong>.</p>
 <p><img alt="Barre outil vecteur" src="../media/vector_toolbar.png" /></p>
+<p>Pensez-bien à <strong>sélectionner votre couche</strong> dans la légende. Cela active ou non les actions dans la <strong>barre d'outils</strong> ci-dessus.</p>
+<p>Utilisons l'icône <img alt="" src="../media/mIconExpressionSelect.png" /> avec un carré jaune et un epsilon (le <code>ε</code>) afin de construire une expression de sélection.</p>
 <ul>
-<li>Pensez-bien à <strong>sélectionner votre couche</strong> dans la légende. Cela active ou non les actions dans la <strong>barre d'outils</strong> ci-dessus.</li>
-<li>
-<p>Utilisons l'icône avec un carré jaune et un epsilon (le <code>ε</code>) afin de construire une expression de sélection.</p>
-<ul>
-<li>Cette icône se trouve dans la barre d'outils ci-dessus de la fenêtre principale</li>
-<li>ou dans la nouvelle fenêtre de la table attributaire.</li>
+<li>Cette icône se trouve dans la <strong>barre d'outils</strong> ci-dessus de la fenêtre principale</li>
+<li>ou dans la nouvelle fenêtre de la <strong>table attributaire</strong>.</li>
 </ul>
-</li>
-<li>
-<p>On souhaite pouvoir sélectionner le(s) entité(s) qui répondent au critère <code>"CODE_INSEE" = '70550'</code>, pour cela utiliser
+<p>On souhaite pouvoir sélectionner le(s) entité(s) qui répondent au critère <code>"CODE_INSEE" = '97229'</code>, pour cela utiliser
 l'interface graphique afin de construire la requête. Que remarquons-nous sur la structure de l'expression ?</p>
 <ul>
 <li>Les <strong>noms des champs</strong> sont entre <code>""</code></li>
 <li>Les <strong>chaînes de caractères</strong> dans les cellules sont entre <code>''</code>.</li>
 </ul>
-</li>
-<li>On souhaite désormais sélectionner toutes les communes dont :<ul>
-<li>le <strong>code INSEE</strong> commence par <code>70</code> à l'aide de l'opérateur <code>LIKE</code> :<ul>
-<li>Le pourcentage permet de faire un caractère "joker" remplaçant n'importe quelle chaîne de caractères<ul>
-<li>Solution : <code>"CODE_INSEE" like '70%'</code></li>
+<p>On souhaite désormais sélectionner toutes les communes dont :</p>
+<ul>
+<li>le <strong>code INSEE</strong> commence par <code>9722</code> à l'aide de l'opérateur <code>LIKE</code> :<ul>
+<li>Le pourcentage permet de faire un caractère "joker" remplaçant n'importe quelle chaîne de caractères : <code>"CODE_INSEE" like '9722%'</code></li>
 </ul>
 </li>
-<li>la population est <strong>inférieure à 1000 habitants</strong> :</li>
-<li>Les populations sont au format texte et non en nombre entier : <code>to_int</code><ul>
-<li>Solution : <code>to_int( "POPUL" ) &lt; 1000</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>les communes du <code>70</code> et du <code>25</code></li>
-</ul>
-</li>
+<li>la population est <strong>inférieure à 1000 habitants</strong> : <code>"POPULATION" &lt; 1000</code></li>
+<li>les communes du <code>Fort-de-France</code> et  <code>Macouba</code> : <code>"NOM" IN ('Fort-de-France', 'Macouba')</code></li>
+<li>la densité au km carré est inférieure à 200 : <code>"POPULATION" / ($area / 1000000) &lt; 200</code></li>
 </ul>
 <h2 id="enregistrer-le-resultat-dune-selection-en-tant-que-nouvelle-couche">Enregistrer le résultat d'une sélection en tant que nouvelle couche<a class="headerlink" href="#enregistrer-le-resultat-dune-selection-en-tant-que-nouvelle-couche" title="Permanent link">#</a></h2>
 <p>On peut <strong>enregistrer la sélection</strong> de la commune dans une nouvelle couche de données en faisant</p>
 <ul>
 <li>un <strong>clic-droit</strong> sur la couche puis <code>Exporter</code>.</li>
-<li>on choisit alors un <strong>format</strong> pour l'export, par exemple <code>ESRI Shapefile</code>.</li>
+<li>on choisit alors un <strong>format</strong> pour l'export,
+  par exemple <code>GeoJSON</code> ou <code>ESRI Shapefile</code>.</li>
 <li>on peut aussi choisir de faire une <strong>reprojection des données</strong>.</li>
 </ul>
 <div class="admonition danger">
