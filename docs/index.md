@@ -11,3 +11,4 @@
     * Le panneau statistique
 * [La sélection par expression](./selection.md)
 * [La calculatrice de champs](./calculatrice.md)
+* [La symbologie vectorielle](./symbologie.md)
