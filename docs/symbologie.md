@@ -1,6 +1,6 @@
 # La symbologie vecteur
 
-Les expressions peuvent être utilisées dans QGIS pour rendre plus dynamique
+Les expressions peuvent être utilisées dans QGIS pour **rendre plus dynamique**
 la symbologie des couches vecteurs:
 
 * calcul via une expression pour **classer les entités** au lieu d'utiliser un champ.
@@ -23,7 +23,9 @@ Quelques exemples :
   d'avoir un champ (virtuel ou non): `"POPULATION" / ($area / 1000000)`
 * Faire une classification sur l'ensemble des valeurs possibles prises par 2 champs :
   `concat("CATEGORIE", ' - ', "IMPORTANCE")`
-* Faire une symbologie graduée en fonction de la compacité des géométries
+
+![Symbole gradué par densité](./media/symbologie_graduee_expression.png)
+
 
 ## La symbologie par ensemble de règles
 
@@ -32,8 +34,8 @@ sont rendus en fonction des entités, ou d'autres caractéristiques (échelles)
 
 Par exemple, on peut choisir de rendre les polygones des communes comme
 
-* des points à petite échelle
-* des polygones à grande échelle
+* des **points** à petite échelle : `$scale >= 500000`
+* des **polygones** à grande échelle : `$scale < 500000`
 
 Pour cela, il faut ouvrir les **propriétés de la couche**, dans l'onglet `Symbologie`
 et choisir le mode `Ensemble de règles
@@ -45,8 +47,29 @@ et choisir le mode `Ensemble de règles
 Quasiment toutes les propriétés de la symbologie (et des étiquettes)
 peuvent être **contrôlées à l'aide d'expressions**.
 
-Il est ainsi possible de choisir la **taille** d'un symbole, la **couleur** d'une bordure,
-l'**échelle** d'affichage, le fait que la donnée soit affichée ou non.
+Pour cela, on doit activer le Epsilon ![](./media/mIconExpression.png)
+à la place du symbole suivant ![](./media/mIconDataDefine.png)
+
+Il est ainsi possible de choisir
+
+* la **taille** d'un symbole,
+* la **couleur** d'une bordure,
+* l'**échelle** d'affichage,
+* le fait que la donnée soit affichée ou non,
+* modifier la symbologie ou les étiquettes des objets sélectionnés :
+  ```sql
+  CASE
+    WHEN is_selected() THEN 'blue'
+    ELSE 'red'
+  END
+  ```
+* la rotation des symboles à partir d'un champ
+  (Ex: angle de prise de vue d'une photographie)
+
+Un exemple amusant :
+
+![Rotation par expression](./media/rotation_par_expression.gif)
+
 
 !!! danger
     Attention à ne pas utiliser les expressions alors que des moyens
@@ -56,11 +79,30 @@ l'**échelle** d'affichage, le fait que la donnée soit affichée ou non.
 
 ## Créer des géométries dynamiques
 
-* Voir l'exemple sur la [Calculatrice](./calculatrice.md) pour la création
-  de géométries à partir de champs de la couches
-* Sinon, on peut aussi créer dynamiquement des géométries, par exemple
-  un tampon de 1km autour de points:
+Voir l'exemple sur la [Calculatrice](./calculatrice.md) pour la création
+de géométries à partir de champs de la couches
 
-```sql
-buffer($geometry, 1000)
-```
+Sinon, on peut aussi créer **dynamiquement des géométries**, avec le **générateur de géométries** par exemple :
+
+* Ouvrir le fichier [des Hydrants de Fort-de-France (@ contributeurs OSM)](./media/hydrant_fort_de_france.geojson)
+* Ouvrir la symbologie
+* Ajouter un niveau de symbole
+* Utiliser le mode "Générateur de géométrie"
+* Créer un **tampon de 500 mètres** autour de points via :
+  ```sql
+  buffer($geometry, 1000)
+  ```
+
+Configuration :
+
+![Générateur de géométrie (configuration)](./media/generateur_geometrie_expression.png)
+
+Le résultat :
+
+![Générateur de géométrie (résultat)](./media/generateur_geometrie_resultat.png)
+
+!!! tip
+    Dans l'expression, on pourrait très bien faire varier la distance tampon
+    en fonction de la valeur d'un champ ou d'un calcul
+
+On peut aussi créer des lignes entre objets, avec la fonction `make_line`.
