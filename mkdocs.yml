@@ -2,7 +2,7 @@ site_name: Formation expressions QGIS
 site_author: 3Liz
 site_description: Formation sur les expressions dans QGIS
 site_url: https://docs.3liz.org/formation-qgis-expressions/
-repo_url: https://github.com/3liz/formation-qgis-expressions/
+#repo_url: https://github.com/3liz/formation-qgis-expressions/
 copyright: '<span class="copyleft">&copy;</span> 3Liz'
 
 docs_dir: docs
@@ -12,7 +12,10 @@ nav:
     - docs.3liz.org: '../'
     - Accueil: index.md
     - Données: source-de-donnees.md
-    - Expressions: expressions.md
+    - Présentation: presentation.md
+    - Visualisation: visualisation.md
+    - Sélection: selection.md
+    - Calculatrice: calculatrice.md
 
 plugins:
   - search
