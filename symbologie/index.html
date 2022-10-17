@@ -622,6 +622,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quelques-exemples-dexpression" class="md-nav__link">
+    Quelques exemples d'expression
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -695,6 +702,13 @@
         <li class="md-nav__item">
   <a href="#creer-des-geometries-dynamiques" class="md-nav__link">
     Créer des géométries dynamiques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quelques-exemples-dexpression" class="md-nav__link">
+    Quelques exemples d'expression
   </a>
   
 </li>
@@ -805,6 +819,53 @@ de géométries à partir de champs de la couches</p>
 en fonction de la valeur d'un champ ou d'un calcul</p>
 </div>
 <p>On peut aussi créer des lignes entre objets, avec la fonction <code>make_line</code>.</p>
+<h2 id="quelques-exemples-dexpression">Quelques exemples d'expression<a class="headerlink" href="#quelques-exemples-dexpression" title="Permanent link">#</a></h2>
+<p>Certains utilisateurs sont assez créatifs et inventent
+de nouvelles utilisations des expressions :</p>
+<ul>
+<li><strong>Couleur continue</strong> pour un vecteur basé sur une palette de couleur <a href="https://twitter.com/Qgis_Bzh/status/1207974981918973962">https://twitter.com/Qgis_Bzh/status/1207974981918973962</a></li>
+<li><strong>Rotation ou taille</strong> qui dépend de la <strong>position du curseur</strong> <a href="https://twitter.com/kgjenkins/status/1298363142070767617">https://twitter.com/kgjenkins/status/1298363142070767617</a></li>
+<li><strong>Lisser</strong> les courbes de niveau SRTM <a href="https://twitter.com/timlinux/status/1331645809834811394">https://twitter.com/timlinux/status/1331645809834811394</a></li>
+<li>Modifier la symbologie ou les étiquettes des <strong>objets sélectionnés</strong> <code>is_selected() = True</code></li>
+<li>Couleur d'étiquette basée sur la <strong>visibilité d'une couche</strong> <code>is_layer_visible()</code>: <a href="https://twitter.com/northroadgeo/status/1208299125604638720">https://twitter.com/northroadgeo/status/1208299125604638720</a></li>
+<li>Trouver le <strong>point le plus proche</strong> : <a href="https://twitter.com/spatialthoughts/status/1421038975955791873">https://twitter.com/spatialthoughts/status/1421038975955791873</a> et <a href="https://www.youtube.com/watch?v=iCgDIxUGAp0&amp;t=113s">https://www.youtube.com/watch?v=iCgDIxUGAp0&amp;t=113s</a></li>
+<li>Lire les données <strong>EXIF d'une image JPG</strong> <a href="https://github.com/qgis/QGIS/commit/754328cbd0a4e5251f03c444221988a7031f4cef">https://github.com/qgis/QGIS/commit/754328cbd0a4e5251f03c444221988a7031f4cef</a></li>
+<li>Récupérer un tableau des éléments d'une <strong>multi-géométrie</strong>: <a href="https://twitter.com/cartocalypse/status/1386647274416181253">https://twitter.com/cartocalypse/status/1386647274416181253</a></li>
+<li>Utiliser <code>eval</code> pour créer des <strong>expressions dans des expressions</strong>. Ex: somme des 31 colonnes de données pour récupérer la somme par mois:
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">eval</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">array_to_string</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">array_foreach</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="n">generate_series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="n">concat</span><span class="p">(</span><span class="ss">&quot;VALUE&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&quot;&#39;</span><span class="p">)),</span><span class="w"> </span><span class="s1">&#39; + &#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
+<li>Déplacer des points de manière aléatoire (floutage)
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">with_variable</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;distance_floutage&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="mi">1000</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">translate</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">geometry</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">distance_floutage</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></li>
+</ul>
 
 
 
