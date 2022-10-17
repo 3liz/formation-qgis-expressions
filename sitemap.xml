@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_atlas/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.3liz.org/formation-qgis-expressions/tp_formulaire/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
