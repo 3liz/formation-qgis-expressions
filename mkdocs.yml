@@ -16,6 +16,8 @@ nav:
     - Visualisation: visualisation.md
     - Sélection: selection.md
     - Calculatrice: calculatrice.md
+    - Symbologie vectorielle: symbologie.md
+    - Etiquettes: etiquette.md
     - TP Outil de saisie:
         - Introduction: tp_outil_saisie.md
         - Import: tp_import.md
@@ -24,8 +26,6 @@ nav:
         - Formulaire de saisie: tp_formulaire.md
         - Table attributaire: tp_table_attributaire.md
         - Mise en page atlas: tp_atlas.md
-    - Symbologie vectorielle: symbologie.md
-    - Etiquettes: etiquette.md
 
 plugins:
   - search
