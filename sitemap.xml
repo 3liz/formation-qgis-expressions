@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.3liz.org/formation-qgis-expressions/tp_outil_saisie/</loc>
+         <lastmod>2022-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.3liz.org/formation-qgis-expressions/tp_relation/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
