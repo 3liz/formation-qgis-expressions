@@ -26,14 +26,19 @@ le symbole **Epsilon** ![epsilon](media/mIconExpression.png).
 
 ## L'éditeur d'expressions
 
+Pour ouvrir l'éditeur, vous pouvez par exemple
+
+* sélectionner une couche dans la légende
+* cliquer sur l'icône ![](media/mIconExpressionSelect.png) dans la barre d'outil de sélection
+
+![](media/function_list.png)
+
 La fenêtre de l’**éditeur d’expression** vous donne accès à:
 
-* l’onglet `Expression` qui, grâce à un large panel de fonctions prédéfinies,
+* l’onglet `Expression` qui, grâce à un large choix de fonctions prédéfinies,
   vous permet d’écrire et de vérifier l’expression à utiliser;
 * l’onglet `Editeur de fonction` qui permet d’étendre cette liste
   par la création de vos propres fonctions.
-
-![](media/function_list.png)
 
 L’onglet `Expression` fournit l’**interface principale** pour écrire
 des expressions en utilisant des fonctions,
@@ -54,12 +59,12 @@ L’**auto-complétion** est disponible pour accélérer l’écriture des expre
   * Un **marqueur** : pour toutes les autres erreurs (par exemple une parenthèse
     manquante, un caractère inattendu) à la position problématique.
 
-Au-dessus de l’éditeur d’expressions, un **ensemble d’outils** vous aide :
+**Au-dessus** de l’éditeur d’expressions, un **ensemble d’outils** vous aide :
 
 * **vider** l’éditeur d’expression
 * **créer et gérer** vos expressions sauvegardées
 
-Sous l’éditeur d'expression, vous trouvez :
+**Sous l’éditeur** d'expression, vous trouvez :
 
 * un ensemble d’**opérateurs de base** pour vous aider à construire l’expression
 * une indication du f**ormat de sortie attendu** lorsque vous définissez
@@ -106,13 +111,13 @@ au langage `SQL` (pour faire des requêtes dans les bases de données)
 
 L’écriture d’une expression dans QGIS suit certaines règles :
 
-* le **nom d'un champ** est entre guillemet double : `"code_insee"`.
+* le **nom d'un champ** est entre guillemet double : `"INSEE_COM"`.
 * une **chaîne de caractère** entre guillemet simple : `'une valeur'`.
 * on peut effectuer des **calculs arithmétiques** sur des
   nombres (entiers ou réels) : `(1 + 2 - (3 * 4)) / 5`
 * on peut **concaténer** des chaînes de caractères : `'Les expressions' || ' dans QGIS'`
 * on peut appeler des **fonctions** qui transforment des valeurs en **paramètres**
-  et renvoient une **valeur**
+  et renvoient une **valeur** : `to_date('01/01/2022', 'dd/MM/yyyy')`
 * selon le **contexte**, on souhaite que l'expression renvoie :
   * une `valeur` textuelle, entière, une chaîne de caractère, par exemple pour calculer une densité
   * un booléen: `Vrai` ou `Faux`, par exemple pour filtrer
