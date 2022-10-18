@@ -116,6 +116,7 @@ de nouvelles utilisations des expressions :
 * **Rotation ou taille** qui dépend de la **position du curseur** https://twitter.com/kgjenkins/status/1298363142070767617
 * **Lisser** les courbes de niveau SRTM https://twitter.com/timlinux/status/1331645809834811394
 * Modifier la symbologie ou les étiquettes des **objets sélectionnés** `is_selected() = True`
+* [Symbologie différente pour une entité au centre de la carte](https://demo.lizmap.com/lizmap/index.php/view/map/?repository=feat1&project=expression_map)
 * Couleur d'étiquette basée sur la **visibilité d'une couche** `is_layer_visible()`: https://twitter.com/northroadgeo/status/1208299125604638720
 * Trouver le **point le plus proche** : https://twitter.com/spatialthoughts/status/1421038975955791873 et https://www.youtube.com/watch?v=iCgDIxUGAp0&t=113s
 * Lire les données **EXIF d'une image JPG** https://github.com/qgis/QGIS/commit/754328cbd0a4e5251f03c444221988a7031f4cef
@@ -142,3 +143,6 @@ de nouvelles utilisations des expressions :
     )
   )
   ```
+* [Usage détourné de QGIS pour afficher un graphique interactif](https://twitter.com/etrimaille/status/1281166495935008769)
+  avec le **Time Manager**
+* ou alors pour [refaire le jeu du morpion](https://www.youtube.com/watch?v=BzCxmg5HgwY)
