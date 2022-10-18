@@ -67,7 +67,7 @@ L’**auto-complétion** est disponible pour accélérer l’écriture des expre
 **Sous l’éditeur** d'expression, vous trouvez :
 
 * un ensemble d’**opérateurs de base** pour vous aider à construire l’expression
-* une indication du f**ormat de sortie attendu** lorsque vous définissez
+* une indication du **format de sortie attendu** lorsque vous définissez
   les données par les propriétés des entités
 * une **prévisualisation** de la sortie de l’expression, évaluée sur la première
   entité de la couche par défaut. Vous pouvez parcourir et évaluer les autres

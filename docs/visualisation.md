@@ -9,7 +9,7 @@ pour nommer de manière unique les entités. C'est utile notamment :
 
 * dans la **table attributaire** en mode d'affichage par **formulaire**
 * dans l'**outil de recherche** `CTRL+K` de QGIS
-* dans l'outil d'**indentification** lorsqu'on fait un clic-droit sur la carte
+* dans l'outil d'**identification** lorsqu'on fait un clic-droit sur la carte
 * dans l'**éditeur d'expressions**, dans la liste déroulante du **prévisualisateur**
 
 Par exemple, sur une couche **COMMUNE**, on peut mettre le nom du champ :

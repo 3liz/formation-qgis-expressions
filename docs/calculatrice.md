@@ -8,13 +8,13 @@ Il permet la mise à jour d'un champ existant ou alors de créer un nouveau cham
 
 La boîte de dialogue est très proche de celle de l'**éditeur d'expressions**,
 avec en haut un nouveau bloc pour configurer quels sont les champs
-**à créer** ou **à modifier**
+**à créer** ou **à modifier.**
 
 ![calculatrice](./media/calculatrice.png)
 
-A partir de cette interface, on peut soit:
+À partir de cette interface, on peut soit:
 
-* créer un **nouveau champ** qui sera rempli avec le résulat de l'expression
+* créer un **nouveau champ** qui sera rempli avec le résultat de l'expression
 * créer un **champ virtuel** qui sera rempli dynamiquement
   avec le résultat de l'expression
 
@@ -107,7 +107,7 @@ Par exemple, on peut créer une géométrie de type point
 make_point("longitude", "latitude")`
 ```
 
-On peut aussi déplacer des points aléatoirement:
+On peut aussi déplacer des points aléatoirement :
 
 ```sql
 with_variable(
@@ -126,7 +126,7 @@ avec les expressions :
 
 * création de géométries (lignes, polygones, etc.)
 * tampons sur les géométries
-* récupération du nombre de noeuds, de parties
+* récupération du nombre de nœuds, de parties
 * etc.
 
 

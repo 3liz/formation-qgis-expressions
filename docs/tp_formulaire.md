@@ -52,5 +52,5 @@ puis en créant une nouvelle observation :
 * Les valeurs incorrectes entraîneront l'incapacité de sauvegarde le formulaire
 
 !!! tip
-    A noter que le formulaire est aussi affiché ainsi dans la **table attributaire**,
+    À noter que le formulaire est aussi affiché ainsi dans la **table attributaire**,
     lorsqu'on active la **vue formulaire** (bouton en bas à droite de la fenêtre)

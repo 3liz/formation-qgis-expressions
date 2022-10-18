@@ -7,4 +7,4 @@ Cette fonctionnalité est communément appelée **"Générer un atlas"**. Elle s
 fortement sur les expressions pour adapter le rendu, les étiquettes, les blocs texte
 à l'entité courante.
 
-Pour la mise en oeuvre, voir la [documentation QGIS sur l'atlas](https://docs.3liz.org/formation-qgis/mise-en-page/#generer-un-atlas)
+Pour la mise en œuvre, voir la [documentation QGIS sur l'atlas](https://docs.3liz.org/formation-qgis/mise-en-page/#generer-un-atlas)

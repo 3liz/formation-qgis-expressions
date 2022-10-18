@@ -11,6 +11,6 @@ avec les étapes suivantes:
 * Visualiser les données problématiques ou importantes dans la **table attributaire**
 * Faire une **mise en page Atlas** pour exporter des fiches
 
-On privilégie dans cette exemple l'utilisation d'**expressions** dans QGIS
+On privilégie dans cet exemple l'utilisation d'**expressions** dans QGIS
 pour la majorité des traitements:
--> pas d'utilisation de requêtes SQL en base de données ou d'algorithmes complexes.
+→ pas d'utilisation de requêtes SQL en base de données ou d'algorithmes complexes.

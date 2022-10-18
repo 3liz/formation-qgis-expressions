@@ -4,8 +4,8 @@ Les expressions peuvent être utilisées dans QGIS pour **rendre plus dynamique*
 la symbologie des couches vecteurs:
 
 * calcul via une expression pour **classer les entités** au lieu d'utiliser un champ.
-* filtrer quelles entités doivent être rendues par tel symbologie via des filtres
-* contrôler toutes les **propriétés** via une expressions (échelle, couleur, taille, etc.)
+* filtrer quelles entités doivent être rendues par telle symbologie via des filtres
+* contrôler toutes les **propriétés** via une expression (échelle, couleur, taille, etc.)
 * **créer des géométries** pour l'affichage (tampons, lignes entre objets)
 
 !!! tip
@@ -19,7 +19,7 @@ il est tout à fait possible d'**utiliser une expression**.
 
 Quelques exemples :
 
-* Faire une classification sur une **densité de popuplation** sans avoir besoin
+* Faire une classification sur une **densité de population** sans avoir besoin
   d'avoir un champ (virtuel ou non): `"POPULATION" / ($area / 1000000)`
 * Faire une classification sur l'ensemble des valeurs possibles prises par 2 champs :
   `concat("CATEGORIE", ' - ', "IMPORTANCE")`
@@ -47,7 +47,7 @@ et choisir le mode `Ensemble de règles
 Quasiment toutes les propriétés de la symbologie (et des étiquettes)
 peuvent être **contrôlées à l'aide d'expressions**.
 
-Pour cela, on doit activer le Epsilon ![](./media/mIconExpression.png)
+Pour cela, on doit activer l'Epsilon ![](./media/mIconExpression.png)
 à la place du symbole suivant ![](./media/mIconDataDefine.png)
 
 Il est ainsi possible de choisir
@@ -80,7 +80,7 @@ Un exemple amusant :
 ## Créer des géométries dynamiques
 
 Voir l'exemple sur la [Calculatrice](./calculatrice.md) pour la création
-de géométries à partir de champs de la couches
+de géométries à partir de champs de la couche
 
 Sinon, on peut aussi créer **dynamiquement des géométries**, avec le **générateur de géométries** par exemple :
 

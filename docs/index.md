@@ -14,12 +14,13 @@
 * [La symbologie vectorielle](./symbologie.md)
 * [Les étiquettes](./etiquette.md)
 * TP - Créer un outil de saisie avec des expressions
+    * [Introduction](./tp_outil_saisie.md)
     * [Import de la donnée source](./tp_import.md)
     * [Création et correction de données via les expressions](./tp_modification.md)
     * [Mise des données en relation](./tp_relation.md)
     * [Créer un formulaire de saisie avancé](./tp_formulaire.md)
     * [Visualiser les données problématiques dans la table](./tp_table_attributaire.md)
     * [Faire une mise en page Atlas pour exporter des fiches](./tp_atlas.md)
-* [Les expressions dans le module de Traitement](./traitement.md)
+* Les expressions dans le module de Traitement
     * L'algorithme "Refactoriser les champs"
     * Le paramètre Expression
