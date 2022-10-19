@@ -76,8 +76,8 @@ de chaque observation, par **intersection** entre leurs géométries
 
   ```sql
   aggregate(
-    layer:='communes',
-    aggregate:='max', expression:="code_commune",
+    layer:='COMMUNE',
+    aggregate:='max', expression:="INSEE_COM",
     filter:=intersects($geometry, geometry(@parent))
   )
   ```
@@ -89,8 +89,8 @@ de chaque observation, par **intersection** entre leurs géométries
 
 Dans les **propriétés du projet QGIS**, onglet **Relations**, créer
 
-* Une relation entre les `observations` et les `communes`
-* Une relation entre les `observations` et les `especes`
+* Une relation entre les `observations` (champ `code_insee`) et les `COMMUNE` (champ `INSEE_COM`)
+* Une relation entre les `observations` (champ `id_espece`) et les `especes` (champ `uid`)
 
 ![width:900](media/relations_observations_especes_et_communes.png)
 
