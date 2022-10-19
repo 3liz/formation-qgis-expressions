@@ -822,8 +822,8 @@ de chaque observation, par <strong>intersection</strong> entre leurs géométrie
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">aggregate</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">layer</span><span class="p">:</span><span class="o">=</span><span class="s1">&#39;communes&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">aggregate</span><span class="p">:</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">expression</span><span class="p">:</span><span class="o">=</span><span class="ss">&quot;code_commune&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">layer</span><span class="p">:</span><span class="o">=</span><span class="s1">&#39;COMMUNE&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">aggregate</span><span class="p">:</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">expression</span><span class="p">:</span><span class="o">=</span><span class="ss">&quot;INSEE_COM&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">filter</span><span class="p">:</span><span class="o">=</span><span class="n">intersects</span><span class="p">(</span><span class="err">$</span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="n">geometry</span><span class="p">(</span><span class="o">@</span><span class="n">parent</span><span class="p">))</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
@@ -832,8 +832,8 @@ de chaque observation, par <strong>intersection</strong> entre leurs géométrie
 <h2 id="creer-des-relations-entre-les-observations-les-communes-et-les-especes">Créer des relations entre les observations, les communes et les espèces<a class="headerlink" href="#creer-des-relations-entre-les-observations-les-communes-et-les-especes" title="Permanent link">#</a></h2>
 <p>Dans les <strong>propriétés du projet QGIS</strong>, onglet <strong>Relations</strong>, créer</p>
 <ul>
-<li>Une relation entre les <code>observations</code> et les <code>communes</code></li>
-<li>Une relation entre les <code>observations</code> et les <code>especes</code></li>
+<li>Une relation entre les <code>observations</code> (champ <code>code_insee</code>) et les <code>COMMUNE</code> (champ <code>INSEE_COM</code>)</li>
+<li>Une relation entre les <code>observations</code> (champ <code>id_espece</code>) et les <code>especes</code> (champ <code>uid</code>)</li>
 </ul>
 <p><img alt="width:900" src="../media/relations_observations_especes_et_communes.png" /></p>
 <h2 id="visualiser-via-la-table-attributaire-les-donnees-en-relation">Visualiser via la table attributaire les données en relation<a class="headerlink" href="#visualiser-via-la-table-attributaire-les-donnees-en-relation" title="Permanent link">#</a></h2>
