@@ -20,12 +20,13 @@ nav:
     - Etiquettes: etiquette.md
     - TP Outil de saisie:
         - Introduction: tp_outil_saisie.md
+        - Rappel sur les expressions: presentation.md
         - Import: tp_import.md
         - Création et correction: tp_modification.md
         - Mise en relation: tp_relation.md
         - Formulaire de saisie: tp_formulaire.md
         - Table attributaire: tp_table_attributaire.md
-        - Mise en page atlas: tp_atlas.md
+        - Annexes: tp_annexes.md
 
 plugins:
   - search

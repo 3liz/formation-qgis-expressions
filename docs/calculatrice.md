@@ -135,4 +135,4 @@ avec les expressions :
 Nous allons consulter et étudier les exemples présentés dans [la présentation sur les expressions](https://docs.3liz.org/presentations/2022-01_QGISFR_2022_outil_saisie_avec_expressions_Michael_DOUCHIN.html)
 animée lors des journées **QGIS FR 2002**
 
-Pour cela, ouvrir dans QGIS le fichier [observations_source.ods](media/observations_source.ods), puis suivre la présentation.
+Pour cela, ouvrir dans QGIS le fichier [observations_source.ods](qgis/observations_source.ods), puis suivre la présentation.

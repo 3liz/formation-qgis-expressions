@@ -4,3 +4,4 @@ build/
 formulaire.gpkg-shm
 formulaire.gpkg-wal
 *.code-workspace
+*~

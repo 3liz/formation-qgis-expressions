@@ -9,35 +9,30 @@ Avec les données exploitées dans notre exemple d'observations, on va relier :
 * les observations avec une table qui **liste les espèces**
 * les observations avec les **communes**
 
+## Charger les données "especes" et "communes"
+
+Pour pouvoir montrer la gestion des relations dans QGIS, nous allons
+charger **deux nouvelles couches** du fichier [donnees.gpkg](qgis/donnees.gpkg).
+
+Enregistrez ce fichier **à côté de votre projet QGIS** puis via l'explorateur
+dans le menu `Dossier du projet`, ouvrir l'arbre et charger :
+
+* la table non spatiale `especes`
+* la table spatiale des `communes`
+
+![explorateur charger especes et communes](media/explorateur_donnees_gpkg.png)
+
 ## On veut créer une table de nomenclature pour les espèces
 
-On souhaite faire une nouvelle table non spatiale dans le Geopackage:
+Dans la table source, on a pour l'instant un nom d'espèce
+dans le champ `espece_support`:
 
-* table `especes`: pour stocker la liste des espèces support (arbres ou arbustes)
+![Champs espece_support](media/espece_support_originale.png)
 
-Dans la table source, on a pour l'instant un nom d'espèce dans le champ `espece_support`:
+On souhaite faire le lien entre la table `especes` et les observations
+par le biais de ce champ `espece_support`.
 
-  ![width:250](media/espece_support_originale.png)
-On pourra ensuite créer des **relations** entre les **observations** et les **espèces**
-
-
-## Créer une table avec les espèces uniques
-
-* Utiliser l'algorithme `Ajouter un champ d'index de valeur unique` qui va produire une **nouvelle table** contenant les valeurs distinctes du champ `espece_support`. Ouvrir la table via l'**explorateur**
-
-![image width:800](media/extraire_les_especes_distinctes.png)
-
-
-* La table `especes` a bien été créée dans le GeoPackage `donnees_suivi_moqueur.gpkg`.
-  On l'ouvre dans le projet
-* Elle contient les champs `fid`, `id_espece` et `espece_support`
-* On va conserver uniquement le `fid` et le champ `espece_support`, qu'on renomme
-  en `nom_scientifique`, en modifiant la table depuis les propriétés de la couche,
-  onglet `Champs`
-* On ajoute un identifiant unique `uid` de type `Texte` avec la calculatrice de champ
-  et l'expression `regexp_replace(uuid(), '[{}]', '')`
-
-  ![image](media/especes_uniques_gpkg.png)
+On pourra ensuite créer une **relation** entre les **observations** et les **espèces**.
 
 ## Ajouter une clé étrangère dans la table observations avec l'id de l'espèce
 
@@ -68,19 +63,24 @@ le **remplir à l'aide d'une expression** basée sur :
 
 ## Récupérer automatiquement la commune de chaque observation
 
-Les **expressions** permettent de gérer les données en relation, par exemple
-via la méthode `aggregate`: on va récupérer le **code INSEE** de la commune
-de chaque observation, par **intersection** entre leurs géométries
+Les **expressions** permettent de gérer les données en relation spatiale :
+on va récupérer le **code INSEE** de la commune de chaque observation,
+par **intersection** entre leurs géométries.
 
-* on crée un nouveau champ `code_insee` de type `Texte`avec l'expression
+* Avec la **calculatrice de champs** on crée un nouveau champ `code_insee`
+  de type `Texte`avec une expression de relation par intersection :
 
-  ```sql
-  aggregate(
-    layer:='COMMUNE',
-    aggregate:='max', expression:="INSEE_COM",
-    filter:=intersects($geometry, geometry(@parent))
-  )
-  ```
+??? note "Récupérer le code de la commune en intersection"
+    * `overlay_intersects` est une méthode efficace pour cela. Elle
+      renvoie un tableau. On peut donc récupérer le premier élément
+      via le `[0]`.
+    ```sql
+      overlay_intersects(
+        layer:='communes',
+        expression:="code_commune",
+        limit:=1
+      )[0]
+    ```
 * On obtient bien le nouveau champ `code_insee` dans la table
   ![width:500](media/observations_code_insee.png)
 

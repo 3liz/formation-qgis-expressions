@@ -40,6 +40,7 @@ La configuration du formulaire
 * pour le champ `id_espece` :
   ![bg](media/formulaire_champ_espece.png)
 
+
 #  Le formulaire de saisie
 
 Vous pouvez tester le formulaire en passant la couche en **mode édition**,
@@ -47,9 +48,9 @@ puis en créant une nouvelle observation :
 
 ![bg right:60%](media/formulaire_dialogue_saisie.png)
 
-* les listes déroulantes seront remplies à partir des autres tables
-* les valeurs par défaut seront visibles dès l'ouverture du formulaire
-* Les valeurs incorrectes entraîneront l'incapacité de sauvegarde le formulaire
+* les **listes déroulantes** seront remplies à partir des **autres tables**
+* les **valeurs par défaut** seront visibles dès l'ouverture du formulaire
+* Les **valeurs incorrectes** entraîneront l'incapacité de sauvegarde le formulaire
 
 !!! tip
     À noter que le formulaire est aussi affiché ainsi dans la **table attributaire**,
