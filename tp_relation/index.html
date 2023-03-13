@@ -794,20 +794,35 @@ le <strong>remplir à l'aide d'une expression</strong> basée sur :</p>
 <li>la méthode <code>attributes</code> qui permet de récupérer les valeurs des champs
   pour cette ligne, ici pour récupérer l'<code>uid</code>créé précédemment</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">attributes</span><span class="p">(</span>
+<details class="note">
+<summary>Récupérer la valeur d'un champ d'une autre couche en correspondance</summary>
+<ul>
+<li>On utilise <code>get_feature</code> qui permet de récupérer un <strong>objet d'une autre couche</strong>
+  en faisant la correspondance avec la valeur d'un champ de la couche</li>
+<li>on utilise <code>attributes</code> qui permet de récupérer les <strong>valeurs</strong> de tous les champs</li>
+<li>on utilise <code>['uid']</code> pour récupérer <strong>la valeur du champ</strong> <code>uid</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">attributes</span><span class="p">(</span>
 <span class="w">    </span><span class="n">get_feature</span><span class="p">(</span>
+<span class="w">        </span><span class="c1">-- nom de la couche où chercher la donnée</span>
 <span class="w">        </span><span class="s1">&#39;especes&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">-- nom du champ dans la couche ou chercher la donnée</span>
 <span class="w">        </span><span class="s1">&#39;nom_scientifique&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">-- nom du champ dans la couche &quot;fille&quot;, ici les observations</span>
 <span class="w">        </span><span class="ss">&quot;espece_support&quot;</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">)[</span><span class="s1">&#39;uid&#39;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div></td></tr></table></div></li>
+</ul>
+</details>
 <ul>
 <li>
 <p>On a bien l'<code>uid</code> de l'espèce ajouté dans le champ <code>id_espece</code>
