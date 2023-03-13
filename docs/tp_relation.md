@@ -45,15 +45,23 @@ le **remplir à l'aide d'une expression** basée sur :
 * la méthode `attributes` qui permet de récupérer les valeurs des champs
   pour cette ligne, ici pour récupérer l'`uid`créé précédemment
 
-  ```sql
-  attributes(
-      get_feature(
-          'especes',
-          'nom_scientifique',
-          "espece_support"
-      )
-  )['uid']
-  ```
+??? note "Récupérer la valeur d'un champ d'une autre couche en correspondance"
+    * On utilise `get_feature` qui permet de récupérer un **objet d'une autre couche**
+      en faisant la correspondance avec la valeur d'un champ de la couche
+    * on utilise `attributes` qui permet de récupérer les **valeurs** de tous les champs
+    * on utilise `['uid']` pour récupérer **la valeur du champ** `uid`
+    ```sql
+    attributes(
+        get_feature(
+            -- nom de la couche où chercher la donnée
+            'especes',
+            -- nom du champ dans la couche ou chercher la donnée
+            'nom_scientifique',
+            -- nom du champ dans la couche "fille", ici les observations
+            "espece_support"
+        )
+    )['uid']
+    ```
 
 * On a bien l'`uid` de l'espèce ajouté dans le champ `id_espece`
 ![width:900](media/observations_id_espece.png)
