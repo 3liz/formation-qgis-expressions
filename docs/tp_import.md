@@ -12,13 +12,13 @@ Voici un aperçu des données du fichier :
 
 ![bg contain](media/fichier_libre_office_source.png)
 
-!!! hint
+!!! hint "Données fictives"
 
     Les données contenues dans ce document sont des **données fictives**
 
-    * Les noms des observateurs sont fictifs
-    * les positions des observations sont le fruit du hasard et ne correspondent
-      pas à la réalité
+    * Les noms des **observateurs** ont été inventés
+    * les **positions spatiales** des observations sont le fruit du hasard
+      et ne correspondent pas à la réalité
 
 ## Importer la donnée source
 
